@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends Actor
 {
+    public Menu()
+    {
+        getImage().scale(20, 20);
+    }
+    
     /**
      * Act - do whatever the Menu wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,17 +20,8 @@ public class Menu extends Actor
     public void act() 
     {
         
-        checkKeyPress();
-        getWorld().showText ("Press 'Space' To Start", getWorld().getWidth()/2, 350);
     } 
     
-    private void checkKeyPress()
-    {
-        if (Greenfoot.isKeyDown("space"))
-        {
-            //startGame = true;
-            getWorld().showText ("", getWorld().getWidth()/2, 350);
-            
-        }
-    }
+    
+    
 }

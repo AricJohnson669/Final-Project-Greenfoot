@@ -13,7 +13,7 @@ public class Paddle extends Actor
     
     public Paddle()
     {
-        getImage().scale(105, 100);
+        getImage().scale(105, 25);
         rightKey = "right"; 
         leftKey = "left";
     }

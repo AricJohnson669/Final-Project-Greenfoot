@@ -8,16 +8,12 @@
  */
 public class Ball extends Actor
 {
-    private final int SIZE = 20;
-    private static int velocity = 0;
+    private int speed;
     
     public Ball()
     {
-        GreenfootImage ballImage = new GreenfootImage (SIZE, SIZE);
-        ballImage.setColor (Color.GRAY);
-        ballImage.fillOval (0, 0, SIZE, SIZE);
-        setImage (ballImage);
-        turn (Greenfoot.getRandomNumber(360) - 1);
+        speed = 5;
+        setRotation(Greenfoot.getRandomNumber(180));
     }
     
     
@@ -27,55 +23,38 @@ public class Ball extends Actor
      */
     public void act() 
     {
-        MyWorld field = (MyWorld) getWorld();
-        
-        if (field.getStarted() == true)
+        move(speed);
+        if(getX() >= 10)
         {
-            move(velocity);
-            checkCollition();
+            rotate();
+            speed = -speed;
+            move(speed);
+        }
+        if(isTouching(Paddle.class))
+        {
+            rotate();
+            setLocation(getX(), getY() - 5);
+        }
+        if(getX() <= 590)
+        {
+            speed = -speed;
+            rotate();
+            setRotation(getRotation() + Greenfoot.getRandomNumber(10));
+        }
+        if(getY() <= 10)
+        {
+            speed = speed;
+            rotate();
+        }
+        if(getY() >= 590)
+        {
+            getWorld().removeObject(this);
         }
     } 
     
-    private void checkCollition()
+    private void rotate()
     {
-        Actor hitting = getOneIntersectingObject(Paddle.class);
-        MyWorld world = (MyWorld) getWorld();
-        
-        if (hitting != null)
-        {
-            velocity = -5;
-            setRotation(- getRotation());
-            move(velocity);
-        }
-        
-        if (getY() <= 10)
-        {
-            setRotation(- getRotation());
-        }
-        
-        if (getY() >= 590)
-        {
-           setRotation(- getRotation()); 
-        } 
-        
-        if (getX() <= 10)
-        {
-            getWorld().removeObject (this);
-            //getPoint = (Score)world.getObjects(Score.class_).get(0);
-            //getPoint.countScore();
-            //world.reset();
-        }
-        else if (getX() >= 790)
-        {
-           getWorld().removeObject (this); 
-           //getPoint = (Score)world.getObjects(Score.class_).get(0);
-           //getPoint.countScore();
-           //world.reset();
-        }
-    }
-    
-    public void setVelocity(int v)
-    {
-        velocity = v;
+        setRotation(getRotation() * -1);
+        setRotation(getRotation() + Greenfoot.getRandomNumber(10));
     }
 }
