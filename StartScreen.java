@@ -54,7 +54,7 @@ public class StartScreen extends World
     {
         MouseInfo mouseLocation = Greenfoot.getMouseInfo();
         
-        if( Greenfoot.mouseClicked(this) )
+        if( Greenfoot.mouseClicked(this))
         {
             if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 85 && mouseLocation.getY() < 115)
             {
@@ -66,7 +66,10 @@ public class StartScreen extends World
                 JOptionPane.showInputDialog( "Please enter your name, Player Two:", null );
             }
             
-            if (mouseLocation.getX() > 406 && mouseLocation.getX() < 600 && mouseLocation
+            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 500 && mouseLocation.getY() > 550 && mouseLocation.getY() < 600)
+            {
+                Greenfoot.setWorld (new Controls());
+            }
         }
         
     }
