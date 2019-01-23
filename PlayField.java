@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+//import java.awt.Color;
 /**
  * Write a description of class PlayField here.
  * 
@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayField extends greenfoot.World
 {
-
+    private boolean isPlayerOne = true;
+    
     /**
      * Constructor for objects of class PlayField.
      * 
@@ -44,53 +45,113 @@ public class PlayField extends greenfoot.World
     {
         MouseInfo mouseLocation = Greenfoot.getMouseInfo();
         
-        
         if( Greenfoot.mouseClicked(this))
         {
-            
-            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+            if( isPlayerOne == true )
             {
-                addObject (new Player1(), 100, 100);
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player1(), 100, 100);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player1(), 300, 100);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player1(), 500, 100);
+                }
+                
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player1(), 100, 300);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player1(), 300, 300);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player1(), 500, 300);
+                }
+                
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player1(), 100, 500);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player1(), 300, 500);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player1(), 500, 500);
+                }
+                
+                isPlayerOne = false;
+                
+                Greenfoot.delay( 60 );
+        
+                Greenfoot.setWorld( new PlayerTwoTurn( this ) );
             }
-            
-            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+            else
             {
-                addObject (new Player1(), 300, 100);
-            }
-            
-            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
-            {
-                addObject (new Player1(), 500, 100);
-            }
-            
-            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
-            {
-                addObject (new Player1(), 100, 300);
-            }
-            
-            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
-            {
-                addObject (new Player1(), 300, 300);
-            }
-            
-            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
-            {
-                addObject (new Player1(), 500, 300);
-            }
-            
-            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
-            {
-                addObject (new Player1(), 100, 500);
-            }
-            
-            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
-            {
-                addObject (new Player1(), 300, 500);
-            }
-            
-            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
-            {
-                addObject (new Player1(), 500, 500);
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player2(), 100, 100);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player2(), 300, 100);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+                {
+                    addObject (new Player2(), 500, 100);
+                }
+                
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player2(), 100, 300);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player2(), 300, 300);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+                {
+                    addObject (new Player2(), 500, 300);
+                }
+                
+                if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player2(), 100, 500);
+                }
+                
+                if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player2(), 300, 500);
+                }
+                
+                if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+                {
+                    addObject (new Player2(), 500, 500);
+                }
+                
+                isPlayerOne = true;
+                
+                Greenfoot.delay( 60 );
+        
+                Greenfoot.setWorld( new PlayerOneTurn( this ) );
             }
         }
     }

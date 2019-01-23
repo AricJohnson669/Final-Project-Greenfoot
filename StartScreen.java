@@ -46,7 +46,7 @@ public class StartScreen extends World
     {
         if (Greenfoot.isKeyDown("space"))
         {
-            Greenfoot.setWorld (new PlayField());
+            Greenfoot.setWorld (new PlayerOneTurn(new PlayField()));
         }
     }
     
