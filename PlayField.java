@@ -21,6 +21,11 @@ public class PlayField extends greenfoot.World
         addObjectsToWorld();
     }
     
+    public void act()
+    {
+        addObjectsToWorld();
+    }
+    
     private void initializePlayField()
     {
         getBackground().setColor(Color.WHITE); 
@@ -37,7 +42,56 @@ public class PlayField extends greenfoot.World
     
     private void addObjectsToWorld()
     {
-        //addObject (new Player1(), getWidth()/2, getHeight()/2);
-        //addObject (new Player2(), 500, getHeight()/2);
+        MouseInfo mouseLocation = Greenfoot.getMouseInfo();
+        
+        
+        if( Greenfoot.mouseClicked(this))
+        {
+            
+            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+            {
+                addObject (new Player1(), 100, 100);
+            }
+            
+            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+            {
+                addObject (new Player1(), 300, 100);
+            }
+            
+            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 0 && mouseLocation.getY() < 200)
+            {
+                addObject (new Player1(), 500, 100);
+            }
+            
+            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+            {
+                addObject (new Player1(), 100, 300);
+            }
+            
+            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+            {
+                addObject (new Player1(), 300, 300);
+            }
+            
+            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 200 && mouseLocation.getY() < 400)
+            {
+                addObject (new Player1(), 500, 300);
+            }
+            
+            if (mouseLocation.getX() > 0 && mouseLocation.getX() < 200 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+            {
+                addObject (new Player1(), 100, 500);
+            }
+            
+            if (mouseLocation.getX() > 200 && mouseLocation.getX() < 400 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+            {
+                addObject (new Player1(), 300, 500);
+            }
+            
+            if (mouseLocation.getX() > 400 && mouseLocation.getX() < 600 && mouseLocation.getY() > 400 && mouseLocation.getY() < 600)
+            {
+                addObject (new Player1(), 500, 500);
+            }
+        }
     }
 }

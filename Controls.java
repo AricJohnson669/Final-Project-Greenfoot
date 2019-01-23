@@ -31,7 +31,6 @@ public class Controls extends World
         getBackground().setColor(Color.BLACK); 
         getBackground().fillRect (0, 0, getWidth(), getHeight());
         showText("Click on your desired grid box \n in order to make your move", 150, 100);
-        showText("'X' places an 'X' and 'O' places an 'O'", 180, 450);
         showText("Go Back", 460, 590);
         getBackground().drawImage(playFieldEx, 100, 150);
     }
