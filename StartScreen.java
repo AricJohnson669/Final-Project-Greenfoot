@@ -33,8 +33,8 @@ public class StartScreen extends World
         startScreen.scale(300, 300);
         getBackground().setColor(Color.BLACK); 
         getBackground().fillRect (0, 0, getWidth(), getHeight());
-        showText("Player1 Name", 400, 100);
-        showText("Player2 Name", 400, 150);
+        //showText("Player1 Name", 400, 100);
+        //showText("Player2 Name", 400, 150);
         showText("Press 'Space' to Start", getWidth()/2, 400);
         showText("Player1 = X", 150, 450);
         showText("Player2 = O", 150, 500);
@@ -56,15 +56,17 @@ public class StartScreen extends World
         
         if( Greenfoot.mouseClicked(this))
         {
-            if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 85 && mouseLocation.getY() < 115)
-            {
-                JOptionPane.showInputDialog( "Please enter your name, Player One:", null );
-            }
-            
-            if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 135 && mouseLocation.getY() < 165)
-            {
-                JOptionPane.showInputDialog( "Please enter your name, Player Two:", null );
-            }
+            /**
+                if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 85 && mouseLocation.getY() < 115)
+                {
+                    JOptionPane.showInputDialog( "Please enter your name, Player One:", null );
+                }
+                
+                if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 135 && mouseLocation.getY() < 165)
+                {
+                    JOptionPane.showInputDialog( "Please enter your name, Player Two:", null );
+                }
+            */
             
             if (mouseLocation.getX() > 400 && mouseLocation.getX() < 500 && mouseLocation.getY() > 550 && mouseLocation.getY() < 600)
             {

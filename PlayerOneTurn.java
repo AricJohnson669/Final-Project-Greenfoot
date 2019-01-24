@@ -18,7 +18,6 @@ public class PlayerOneTurn extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
         showText ("Player One's Turn", getWidth()/2, getHeight()/2);
-        
         changeBackTo = changeBack;
     }
     
