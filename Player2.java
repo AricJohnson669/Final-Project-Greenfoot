@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player2 here.
+ * Player2 scales the image of O
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Aric Johnson) 
+ * @version (Jan 24, 2019)
  */
 public class Player2 extends Actor
 {
+    /**
+     * Constructor for objects of class Player2.
+     * 
+     */
     public Player2()
     {
         getImage().scale(200, 200);
@@ -21,6 +25,4 @@ public class Player2 extends Actor
     {
         
     }    
-    
-    
 }

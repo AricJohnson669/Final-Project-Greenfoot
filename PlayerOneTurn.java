@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlayerOneTurn here.
+ * PlayerOneTurn sets up a world that tells the players who's turn it is
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Aric Johnson) 
+ * @version (Jan 24, 2019)
  */
 public class PlayerOneTurn extends World
 {
+    //instance variable changeBackTo changes the world, playField, to the world PlayerOneTurn, and back again
     World changeBackTo;
     /**
      * Constructor for objects of class PlayerOneTurn.
@@ -21,6 +22,10 @@ public class PlayerOneTurn extends World
         changeBackTo = changeBack;
     }
     
+    /**
+     * Act - do whatever PlayerOneTurn wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         Greenfoot.delay(60);

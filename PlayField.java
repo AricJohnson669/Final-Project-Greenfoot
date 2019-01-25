@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-//import java.awt.Color;
+
 /**
- * Write a description of class PlayField here.
+ * PlayField sets up the play field grid and buttons that are used to place X's or O's
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Aric Johnson) 
+ * @version (Jan 24, 2019)
  */
 public class PlayField extends greenfoot.World
 {
+    // instence variable isPlayerOne is a boolean used to detect which player's turn it is
     private boolean isPlayerOne = true;
+    // instence variable hasBeenSelected is a boolean used to detect if a grid box has been selected by a player
     private boolean hasBeenSelected = false;
+    // instence variable Actor[][] is a 2D array that is used to detect if a player has won
     private Actor[][] gameBoard = new Actor[3][3];
     /**
      * Constructor for objects of class PlayField.
@@ -23,26 +26,44 @@ public class PlayField extends greenfoot.World
         addObjectsToWorld();
     }
     
+    /**
+     * Act - do whatever PlayField wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         addObjectsToWorld();
         checkWin();
     }
     
+    /**
+     * initializePlayField sets up the design of the play field by 
+     * making the background white and drawing a grid
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void initializePlayField()
     {
         getBackground().setColor(Color.WHITE); 
         getBackground().fillRect (0, 0, getWidth(), getHeight());
-        getBackground().setColor(Color.GRAY);
+        getBackground().setColor(Color.BLACK);
         getBackground().fillRect (200, 0, 4, getHeight());
-        getBackground().setColor(Color.GRAY);
+        getBackground().setColor(Color.BLACK);
         getBackground().fillRect (400, 0, 4, getHeight());
-        getBackground().setColor(Color.GRAY);
+        getBackground().setColor(Color.BLACK);
         getBackground().fillRect (0, 200, 600, 4);
-        getBackground().setColor(Color.GRAY);
+        getBackground().setColor(Color.BLACK);
         getBackground().fillRect (0, 400, 600, 4);
     }
     
+    /**
+     * addObjectsToWorld() detects if a player has clicked on their 
+     * desired grid box and places an actor, "X" or "O" 
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void addObjectsToWorld()
     {
         MouseInfo mouseLocation = Greenfoot.getMouseInfo();
@@ -174,75 +195,83 @@ public class PlayField extends greenfoot.World
         }
     }
     
+    /**
+     * checkWin checks if "X"s or "O"s are lined up 
+     * diagonaly, horixontaly or vertically. This 
+     * also tells the players who's turn it is.
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void checkWin()
     {
         if (gameBoard[0][0] instanceof Player1 && gameBoard[0][1] instanceof Player1 && gameBoard[0][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[1][0] instanceof Player1 && gameBoard[1][1] instanceof Player1 && gameBoard[1][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[2][0] instanceof Player1 && gameBoard[2][1] instanceof Player1 && gameBoard[2][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[0][0] instanceof Player1 && gameBoard[1][0] instanceof Player1 && gameBoard[2][0] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[0][1] instanceof Player1 && gameBoard[1][1] instanceof Player1 && gameBoard[2][1] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[0][2] instanceof Player1 && gameBoard[1][2] instanceof Player1 && gameBoard[2][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[0][0] instanceof Player1 && gameBoard[1][1] instanceof Player1 && gameBoard[2][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[2][0] instanceof Player1 && gameBoard[1][1] instanceof Player1 && gameBoard[0][2] instanceof Player1)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerOneWin());
         }
         else if (gameBoard[0][0] instanceof Player2 && gameBoard[0][1] instanceof Player2 && gameBoard[0][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[1][0] instanceof Player2 && gameBoard[1][1] instanceof Player2 && gameBoard[1][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[2][0] instanceof Player2 && gameBoard[2][1] instanceof Player2 && gameBoard[2][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[0][0] instanceof Player2 && gameBoard[1][0] instanceof Player2 && gameBoard[2][0] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[0][1] instanceof Player2 && gameBoard[1][1] instanceof Player2 && gameBoard[2][1] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[0][2] instanceof Player2 && gameBoard[1][2] instanceof Player2 && gameBoard[2][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[0][0] instanceof Player2 && gameBoard[1][1] instanceof Player2 && gameBoard[2][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if (gameBoard[2][0] instanceof Player2 && gameBoard[1][1] instanceof Player2 && gameBoard[0][2] instanceof Player2)
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new PlayerTwoWin());
         }
         else if( checkFullBoard() == true )
         {
-            Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new StaleMate());
         }
         else if( hasBeenSelected == true && isPlayerOne == false )
         {
@@ -258,6 +287,14 @@ public class PlayField extends greenfoot.World
         }
     }
     
+    /**
+     * checkFullBoard checks if the board is 
+     * filled but it is a stale mate, if it 
+     * is a stale mate no one wins.
+     * 
+     * @param There are no parameters
+     * @return boolean boardFilled is being returned, this tells you if the board has been filled or not
+     */
     private boolean checkFullBoard()
     {
         boolean boardFilled = true;

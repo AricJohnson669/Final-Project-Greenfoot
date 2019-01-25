@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Controls here.
+ * Controls sets up a controls menu and a button to go back to the StartScreen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Aric Johnson) 
+ * @version (Jan 24, 2019)
  */
 public class Controls extends World
 {
@@ -20,11 +20,23 @@ public class Controls extends World
         initializeControls();
     }
     
+    /**
+     * Act - do whatever Controls wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         checkScreenSwitch();
     }
     
+    /**
+     * initializeControls sets up the design for the controls menu by adding 
+     * text, an example of the play field "playFieldEx" and a button in the 
+     * bottum right that takes you back to the start screen.
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void initializeControls()
     {
         GreenfootImage playFieldEx = new GreenfootImage("Gridv2.PNG");
@@ -35,6 +47,14 @@ public class Controls extends World
         getBackground().drawImage(playFieldEx, 100, 150);
     }
     
+    
+    /**
+     * checkScreenSwitch checks if the user has clicked on "go back" in the bottom right corner. 
+     * If they have then it sets the world to the start screen
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void checkScreenSwitch()
     {
         MouseInfo mouseLocation = Greenfoot.getMouseInfo();

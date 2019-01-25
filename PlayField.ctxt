@@ -1,17 +1,22 @@
 #BlueJ class context
 comment0.target=PlayField
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PlayField\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ PlayField\ sets\ up\ the\ play\ field\ grid\ and\ buttons\ that\ are\ used\ to\ place\ X's\ or\ O's\r\n\ \r\n\ @author\ (Aric\ Johnson)\ \r\n\ @version\ (Jan\ 24,\ 2019)\r\n
 comment1.params=
 comment1.target=PlayField()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayField.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ PlayField\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ initializePlayField()
+comment3.text=\r\n\ initializePlayField\ sets\ up\ the\ design\ of\ the\ play\ field\ by\ \r\n\ making\ the\ background\ white\ and\ drawing\ a\ grid\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 comment4.params=
 comment4.target=void\ addObjectsToWorld()
+comment4.text=\r\n\ addObjectsToWorld()\ detects\ if\ a\ player\ has\ clicked\ on\ their\ \r\n\ desired\ grid\ box\ and\ places\ an\ actor,\ "X"\ or\ "O"\ \r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 comment5.params=
 comment5.target=void\ checkWin()
+comment5.text=\r\n\ checkWin\ checks\ if\ "X"s\ or\ "O"s\ are\ lined\ up\ \r\n\ diagonaly,\ horixontaly\ or\ vertically.\ This\ \r\n\ also\ tells\ the\ players\ who's\ turn\ it\ is.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 comment6.params=
 comment6.target=boolean\ checkFullBoard()
+comment6.text=\r\n\ checkFullBoard\ checks\ if\ the\ board\ is\ \r\n\ filled\ but\ it\ is\ a\ stale\ mate,\ if\ it\ \r\n\ is\ a\ stale\ mate\ no\ one\ wins.\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ boolean\ boardFilled\ is\ being\ returned,\ this\ tells\ you\ if\ the\ board\ has\ been\ filled\ or\ not\r\n
 numComments=7

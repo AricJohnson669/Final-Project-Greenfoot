@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=StartScreen
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ StartScreen\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ StartScreen\ sets\ up\ a\ world\ that\ tells\ the\ player\ how\ to\ start\ the\ game\ and\ it\ adds\ a\ controls\ button\ in\ the\ bottom\ right\r\n\ \r\n\ @author\ (Aric\ Johnson)\ \r\n\ @version\ (Jan\ 24,\ 2019)\r\n
 comment1.params=
 comment1.target=StartScreen()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StartScreen.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ StartScreen\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ initializeStartScreen()
+comment3.text=\r\n\ initializeStartScreen\ sets\ up\ the\ start\ screen\ \r\n\ by\ setting\ the\ background\ color\ to\ black\ and\ \r\n\ pasting\ text\ as\ well\ as\ putting\ a\ button\ in\ the\ \r\n\ bottom\ right\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 comment4.params=
 comment4.target=void\ gameStart()
+comment4.text=\r\n\ gameStart\ checks\ if\ the\ space\ bar\ has\ been\ \r\n\ pressed,\ if\ it\ has\ then\ the\ world\ is\ set\ to\ \r\n\ PlayField\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 comment5.params=
-comment5.target=void\ checkNameChange()
+comment5.target=void\ buttonClicked()
+comment5.text=\r\n\ checkButtonClicked\ checks\ if\ the\ controls\ \r\n\ button\ in\ the\ bottom\ right\ of\ the\ start\ screen\r\n\ \r\n\ @param\ There\ are\ no\ parameters\r\n\ @return\ Nothing\ is\ being\ returned\r\n
 numComments=6

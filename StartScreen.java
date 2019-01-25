@@ -1,14 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import javax.swing.JOptionPane;
 /**
- * Write a description of class StartScreen here.
+ * StartScreen sets up a world that tells the player how to start the game and it adds a controls button in the bottom right
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Aric Johnson) 
+ * @version (Jan 24, 2019)
  */
 public class StartScreen extends World
 {
-    
     /**
      * Constructor for objects of class StartScreen.
      * 
@@ -20,21 +19,31 @@ public class StartScreen extends World
         initializeStartScreen();
     }
     
+    /**
+     * Act - do whatever StartScreen wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
-        checkNameChange();
-        
+        buttonClicked();
         gameStart();
     }
     
+    /**
+     * initializeStartScreen sets up the start screen 
+     * by setting the background color to black and 
+     * pasting text as well as putting a button in the 
+     * bottom right
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void initializeStartScreen()
     {
         GreenfootImage startScreen = new GreenfootImage("StartScreen3.png");
         startScreen.scale(300, 300);
         getBackground().setColor(Color.BLACK); 
         getBackground().fillRect (0, 0, getWidth(), getHeight());
-        //showText("Player1 Name", 400, 100);
-        //showText("Player2 Name", 400, 150);
         showText("Press 'Space' to Start", getWidth()/2, 400);
         showText("Player1 = X", 150, 450);
         showText("Player2 = O", 150, 500);
@@ -42,6 +51,14 @@ public class StartScreen extends World
         getBackground().drawImage(startScreen, 25, 50);
     }
     
+    /**
+     * gameStart checks if the space bar has been 
+     * pressed, if it has then the world is set to 
+     * PlayField
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
     private void gameStart()
     {
         if (Greenfoot.isKeyDown("space"))
@@ -50,29 +67,23 @@ public class StartScreen extends World
         }
     }
     
-    private void checkNameChange()
+    /**
+     * checkButtonClicked checks if the controls 
+     * button in the bottom right of the start screen
+     * 
+     * @param There are no parameters
+     * @return Nothing is being returned
+     */
+    private void buttonClicked()
     {
         MouseInfo mouseLocation = Greenfoot.getMouseInfo();
         
         if( Greenfoot.mouseClicked(this))
         {
-            /**
-                if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 85 && mouseLocation.getY() < 115)
-                {
-                    JOptionPane.showInputDialog( "Please enter your name, Player One:", null );
-                }
-                
-                if( mouseLocation.getX() > 250 && mouseLocation.getX() < 550 && mouseLocation.getY() > 135 && mouseLocation.getY() < 165)
-                {
-                    JOptionPane.showInputDialog( "Please enter your name, Player Two:", null );
-                }
-            */
-            
             if (mouseLocation.getX() > 400 && mouseLocation.getX() < 500 && mouseLocation.getY() > 550 && mouseLocation.getY() < 600)
             {
                 Greenfoot.setWorld (new Controls());
             }
         }
-        
     }
 }
